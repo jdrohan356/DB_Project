@@ -27,6 +27,30 @@ const InlineUserEditor = ({user, deleteUser, updateUser}) => {
                             value={userCopy.username}
                             onChange={(e)=>setUserCopy(userCopy => ({...userCopy, username: e.target.value}))}/>
                     </div>
+                    <div className="col">
+                        <input
+                            className="form-control"
+                            value={userCopy.address}
+                            onChange={(e)=>setUserCopy(userCopy => ({...userCopy, address: e.target.value}))}/>
+                    </div>
+                    <div className="col">
+                        <input
+                            className="form-control"
+                            value={userCopy.zip}
+                            onChange={(e)=>setUserCopy(userCopy => ({...userCopy, zip: e.target.value}))}/>
+                    </div>
+                    <div className="col">
+                        <input
+                            className="form-control"
+                            value={userCopy.phoneNumber}
+                            onChange={(e)=>setUserCopy(userCopy => ({...userCopy, phoneNumber: e.target.value}))}/>
+                    </div>
+                    <div className="col">
+                        <input
+                            className="form-control"
+                            value={userCopy.email}
+                            onChange={(e)=>setUserCopy(userCopy => ({...userCopy, email: e.target.value}))}/>
+                    </div>
                     <div className="col-1">
                         <Link to={`/users/${userCopy.id}/blogs`}>
                             Blogs
@@ -61,6 +85,11 @@ const InlineUserEditor = ({user, deleteUser, updateUser}) => {
                     <div className="col">
                         <Link to={`/users/${userCopy.id}`}>
                             {userCopy.username}
+                        </Link>
+                    </div>
+                    <div className="col">
+                        <Link to={`/users/${userCopy.id}`}>
+                            {userCopy.address}
                         </Link>
                     </div>
                     <div className="col-1">

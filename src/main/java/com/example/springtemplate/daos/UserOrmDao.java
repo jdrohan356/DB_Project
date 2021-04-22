@@ -37,8 +37,10 @@ public class UserOrmDao {
         user.setLastName(userUpdates.getLastName());
         user.setUsername(userUpdates.getUsername());
         user.setPassword(userUpdates.getPassword());
-        user.setProfilePicture(userUpdates.getProfilePicture());
-        user.setHandle(userUpdates.getHandle());
+        user.setAddress(userUpdates.getAddress());
+        user.setZip(userUpdates.getZip());
+        user.setPhoneNumber(userUpdates.getPhoneNumber());
+        user.setEmail(userUpdates.getEmail());
         return userRepository.save(user);
     }
     

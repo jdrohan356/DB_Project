@@ -41,11 +41,26 @@ const UserFormEditor = () => {
                 setUser(user =>
                     ({...user, username: e.target.value}))}
                    value={user.username}/><br/>
-            <label>Password</label>
+            <label>Address</label>
             <input onChange={(e) =>
                 setUser(user =>
-                    ({...user, password: e.target.value}))}
-                   value={user.password}/><br/>
+                    ({...user, address: e.target.value}))}
+                   value={user.address}/><br/>
+            <label>Zip</label>
+            <input onChange={(e) =>
+                setUser(user =>
+                    ({...user, zip: e.target.value}))}
+                   value={user.zip}/><br/>
+            <label>Phone Number</label>
+            <input onChange={(e) =>
+                setUser(user =>
+                    ({...user, phoneNumber: e.target.value}))}
+                   value={user.phoneNumber}/><br/>
+            <label>Email</label>
+            <input onChange={(e) =>
+                setUser(user =>
+                    ({...user, email: e.target.value}))}
+                   value={user.email}/><br/>
             <button
                 onClick={() => {
                     history.back()}}>
