@@ -66,11 +66,17 @@ const UserFormEditor = () => {
                 setUser(user =>
                     ({...user, email: e.target.value}))}
                    value={user.email}/><br/>
-            <label>Account Type</label>
-            <input onChange={(e) =>
+            <label>Account Type</label><br/>
+            <input id={2} name={"account_type"} value={2} type={"radio"} onChange={(e) =>
                 setUser(user =>
-                    ({...user, accountType: e.target.value}))}
-                   value={user.accountType}/><br/>
+                    ({...user, accountType: 2}))}
+                   value={user.accountType}/>
+            <label htmlFor={2}>Premium</label><br/>
+            <input id={1} name={"account_type"} value={1} type={"radio"} onChange={(e) =>
+                setUser(user =>
+                    ({...user, accountType: 1}))}
+                   value={user.accountType}/>
+            <label htmlFor={1}>Standard</label><br/>
             <button
                 onClick={() => {
                     history.back()}}>

@@ -1,6 +1,5 @@
 package com.example.springtemplate.models;
 
-import java.util.Date;
 import javax.persistence.*;
 
 @Entity
@@ -17,7 +16,7 @@ public class User {
     private Integer zip;
     private long phone_number;
     private String email;
-    private Date created;
+    private Integer account_type;
 
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
@@ -46,9 +45,10 @@ public class User {
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
 
-    public Date getCreated() { return created; }
+    public Integer getAccountType() { return account_type; }
+    public void setAccountType(Integer account_type) { this.account_type = account_type; }
 
-    public User(String first_name, String last_name, String username, String password, String address, Integer zip, long phone_number, String email, String stringDate){
+    public User(String first_name, String last_name, String username, String password, String address, Integer zip, long phone_number, String email, Integer account_type){
         this.first_name = first_name;
         this.last_name = last_name;
         this.username = username;
@@ -57,6 +57,7 @@ public class User {
         this.zip = zip;
         this.phone_number = phone_number;
         this.email = email;
+        this.account_type = account_type;
     }
 
     public User() {}

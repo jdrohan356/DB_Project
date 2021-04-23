@@ -41,6 +41,7 @@ public class UserOrmDao {
         user.setZip(userUpdates.getZip());
         user.setPhoneNumber(userUpdates.getPhoneNumber());
         user.setEmail(userUpdates.getEmail());
+        user.setAccountType(userUpdates.getAccountType());
         return userRepository.save(user);
     }
     
