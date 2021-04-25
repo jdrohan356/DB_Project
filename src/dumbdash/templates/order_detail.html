@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+	<h1>Order #{{order.id}}</h1>
+	<p>Restaurant: {{ order.restaurant.name }}</p>
+
+	<hr>
+		<h3>Order Details</h3>
+			<table>
+				<tr>
+				    <td>User:</td>
+					<td>{{ order.user.first_name }} {{ order.user.last_name }}</td>
+				</tr>
+				<tr>
+				    <td>Price:</td>
+					<td>{{ order.price }}</td>
+				</tr>
+					<td>Order:</td>
+					<td>{{ order.food_request }}</td>
+				</tr>
+			</table>
+{% endblock %}

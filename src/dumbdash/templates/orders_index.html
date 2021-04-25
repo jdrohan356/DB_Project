@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<h1>DumbDash Order Dashboard</h1>
+<a href="{% url 'order_create' %}" class="btn btn-success">
+                    New Order
+</a>
+<a href="{% url 'users_modify' %}" class="btn btn-light">
+                    Add/Remove User
+</a>
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <th scope="col">#</th>
+        <th scope="col">Customer</th>
+        <th scope="col">Restaurant</th>
+        <th scope="col">Price ($)</th>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+        <tr>
+            <th scope="row">
+                <a href="{% url 'order_detail' order.pk %}">
+                    {{ order.id }}
+                </a>
+            </th>
+            <td>{{ order.user.first_name }} {{ order.user.last_name }}</td>
+            <td>{{ order.restaurant.name }}</td>
+            <td>{{ order.price }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

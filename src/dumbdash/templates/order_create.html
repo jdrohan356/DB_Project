@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+<h1>Create Order</h1>
+<form action="/create" method="post">
+    <div class="form-group">
+      <label for="restaurant">Select Restaurant:</label>
+      <select class="form-control" name="restaurant">
+          {% for rest in restaurants %}
+          <option value="{{ rest.id }}">{{ rest.name }}</option>
+          {% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="user">Select User:</label>
+      <select class="form-control" name="user">
+          {% for user in users %}
+          <option value="{{ user.id }}">{{ user.first_name }} {{ user.last_name }}</option>
+          {% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="food_request">Food Request</label>
+      <input type="text" class="form-control" name="food_request" placeholder="The client would like a...">
+    </div>
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input type="text" class="form-control" name="price" placeholder="16.28">
+    </div>
+    <button type="submit" class="btn btn-success">Submit Order</button>
+  </form>
+{% endblock %}
