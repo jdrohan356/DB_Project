@@ -65,3 +65,7 @@ Domain objects:
   To update a user, click the ID of the user that needs updating, replace the old information with the new information, and click the "Save User" button.
   We decided to CRUD in this fasion as it increases modularity and reduces the risk of human errors.
   Finally to keep the data stored in the database up to date, the UI also allows the operators to create, update, and delete any of the orders or restaurants currently being stored.
+
+
+Project Notes: Since the project was completed in django instead of SQL and Java it was easier to implement without the use of a database folder. Instead the 
+project is in the src file with the data for the database in the db.sqlite3 file. 
