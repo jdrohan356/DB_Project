@@ -38,7 +38,7 @@ Domain objects:
   The user simply needs to call one of our many operating centers and place their order. 
   They may choose a specific restaurant or just describe what they are looking for and we can pair them with one of the restaurants in our database. 
   This will allow people to confidently and safely order food without putting themselves and others at risk.
-5. Updated UML Diagram - [embed]file:///Users/bongo/Downloads/P1%20Final%20Project.pdf[/embed]
+5. Updated UML Diagram - ![UML](/UML.png)
 6. The user data model includes information on each user’s name, username, password, address, zip, Venmo username, phone number, email, and the time of account creation. 
   This data is important because it allows us to easily find at which address to deliver the food to any given customer, contact any customer by email and/or phone with updates on their order or if there is a problem, and have them pay us the correct amount through Venmo.
 7. Our two domain objects are orders, and restaurants. 
@@ -64,10 +64,4 @@ Domain objects:
   To create a new user, click the ID of any existing user, change the ID to a number that does not yet exist, fill in the information for the new user, and click the "Insert User" button.
   To update a user, click the ID of the user that needs updating, replace the old information with the new information, and click the "Save User" button.
   We decided to CRUD in this fasion as it increases modularity and reduces the risk of human errors.
-  Finally to keep the data stored in the database up to date, the UI also allows the operators to create, update, and delete any of the orders or restaurants currently being stored. 
-
-Project Note:
-Since the project was completed in django and not SQL it was easier to store the data without a database folder. The whole project is inside the src file and the
-data for our database was stored in the db.sqlite3 file.
-
-
+  Finally to keep the data stored in the database up to date, the UI also allows the operators to create, update, and delete any of the orders or restaurants currently being stored.
