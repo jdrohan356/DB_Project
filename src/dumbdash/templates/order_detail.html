@@ -2,22 +2,41 @@
 {% load static %}
 
 {% block page_content %}
-	<h1>Order #{{order.id}}</h1>
-	<p>Restaurant: {{ order.restaurant.name }}</p>
-
-	<hr>
-		<h3>Order Details</h3>
-			<table>
-				<tr>
-				    <td>User:</td>
-					<td>{{ order.user.first_name }} {{ order.user.last_name }}</td>
-				</tr>
-				<tr>
-				    <td>Price:</td>
-					<td>{{ order.price }}</td>
-				</tr>
-					<td>Order:</td>
-					<td>{{ order.food_request }}</td>
-				</tr>
-			</table>
+<h1>Order #{{ order.id }}</h1>
+<form action="" method="post">
+	<input type="hidden" class="form-control" name="id" value="{{ order.id }}">
+    <div class="form-group">
+      <label for="restaurant">Select Restaurant:</label>
+      <select class="form-control" name="restaurant">
+          {% for rest in restaurants %}
+            {% if rest.id == order.restaurant.id %}
+            <option value="{{ rest.id }}" selected>{{ rest.name }}</option>
+            {% else %}
+            <option value="{{ rest.id }}">{{ rest.name }}</option>
+            {% endif %}
+          {% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="user">Select User:</label>
+      <select class="form-control" name="user">
+          {% for user in users %}
+		  	    {% if user.id == order.user.id %}
+          	<option value="{{ user.id }}" selected>{{ user.first_name }} {{ user.last_name }}</option>
+			      {% else %}
+				    <option value="{{ user.id }}">{{ user.first_name }} {{ user.last_name }}</option>
+			      {% endif %}
+          {% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="food_request">Food Request</label>
+      <input type="text" class="form-control" name="food_request" value="{{ order.food_request }}">
+    </div>
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input type="text" class="form-control" name="price" value="{{ order.price }}">
+    </div>
+    <button type="submit" class="btn btn-success">Save Order</button>
+  </form>
 {% endblock %}

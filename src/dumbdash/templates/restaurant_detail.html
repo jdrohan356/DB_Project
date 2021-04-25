@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<div class="viewer" style="display:flex;width:100%">
+  <div class="editor" style="flex:1;">
+    <h1>Restaurant Editor</h1>
+    <form action="{{ restaurant.id }}" method="post">
+        <div class="form-group">
+            <label for="id">ID <i>(note: changing the ID field will create a *new* restaurant)</i></label>
+            <input type="text" class="form-control" name="id" value="{{ restaurant.id }}">
+
+            <label for="name">Name</label>
+            <input type="text" class="form-control" name="name" value="{{ restaurant.name }}">
+
+            <label for="phone_number">Phone Number</label>
+            <input type="text" class="form-control" name="phone_number" value="{{ restaurant.phone_number }}">
+        </div>
+        <button type="submit" class="btn btn-success">Save Restaurant</button>
+        <button type="submit" class="btn btn-success">Insert Restaurant</button>
+    </form>
+  </div>
+  <br>
+  <div class="order-view" style="flex:2;">
+  <h1>
+    Orders
+  </h1>
+    <table class="table table-striped">
+      <thead class="thead-dark">
+          <th scope="col">#</th>
+          <th scope="col">Customer</th>
+          <th scope="col">Restaurant</th>
+          <th scope="col">Request</th>
+          <th scope="col">Price ($)</th>
+      </thead>
+      <tbody>
+        {% for order in orders %}
+          <tr>
+              <th scope="row">
+                  <a href="{% url 'order_detail' order.pk %}">
+                      {{ order.id }}
+                  </a>
+              </th>
+              <td><a href="/users/{{ order.user.id }}">{{ order.user.first_name }} {{ order.user.last_name }}</a></td>
+              <td><a href="/restaurants/{{ order.restaurant.id }}">{{ order.restaurant.name }}</a></td>
+              <td>{{ order.food_request }}</td>
+              <td>{{ order.price }}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}

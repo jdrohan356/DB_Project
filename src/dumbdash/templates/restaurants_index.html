@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+
+<h3>Restaurants</h3>
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">Delete</th>
+    </thead>
+    <tbody>
+        {% for restaurant in restaurants %}
+            <form action="" method="post">
+                <tr>
+                    <th scope="row">
+                        <a href="{% url 'restaurant_detail' restaurant.pk %}">
+                            {{ restaurant.id }}
+                        </a>
+                    </th>
+                    <td>{{ restaurant.name }}</td>
+                    <td>{{ restaurant.phone_number }}</td>
+                    <td>
+                            <input type="hidden" id="id" name="id" value="{{ restaurant.id }}">
+                            <button type="submit" class="btn btn-danger" name="intent" value="rm">Remove</button>
+                    </td>
+                </tr>
+            </form>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

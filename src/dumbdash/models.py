@@ -29,5 +29,5 @@ class Orders(models.Model):
     food_request = models.CharField(max_length=200)
     price = models.DecimalField(max_digits=6, decimal_places=2)
 
-    user = models.ForeignKey(Users, on_delete=models.DO_NOTHING)
+    user = models.ForeignKey(Users, on_delete=models.CASCADE)
     restaurant = models.ForeignKey(Restaurants, on_delete=models.DO_NOTHING)
