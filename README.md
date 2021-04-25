@@ -61,6 +61,9 @@ Domain objects:
   This new order will then be added to the list of previously completed orders. 
   The UI also provides the ability to create, edit, and delete users from the database. 
   This way new, current, and previous users can alter their accounts with a simple phone call to one of our operators. 
+  To create a new user, click the ID of any existing user, change the ID to a number that does not yet exist, fill in the information for the new user, and click the "Insert User" button.
+  To update a user, click the ID of the user that needs updating, replace the old information with the new information, and click the "Save User" button.
+  We decided to CRUD in this fasion as it increases modularity and reduces the risk of mistakes.
   Finally to keep the data stored in the database up to date, the UI also allows the operators to create, update, and delete any of the orders or restaurants currently being stored. 
 
 
