@@ -66,7 +66,8 @@ Domain objects:
   We decided to CRUD in this fasion as it increases modularity and reduces the risk of human errors.
   Finally to keep the data stored in the database up to date, the UI also allows the operators to create, update, and delete any of the orders or restaurants currently being stored. 
 
-
-
+Project Note:
+Since the project was completed in django and not SQL it was easier to store the data without a database folder. The data for our database was stored in the
+db.sql.ite3 file and the rest of the code is stored in the src file. 
 
 
