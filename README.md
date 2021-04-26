@@ -67,5 +67,4 @@ Domain objects:
   Finally to keep the data stored in the database up to date, the UI also allows the operators to create, update, and delete any of the orders or restaurants currently being stored.
 
 
-Project Notes: Since the project was completed in django instead of SQL and Java it was easier to implement without the use of a database folder. Instead the 
-project is in the src file with the data for the database in the db.sqlite3 file. 
+Project Notes: Since the project was completed in Python with Django using SQlite3 instead of SQL / Java it was easier to implement without the use of a database folder. Instead the project is in the src file with the data for the database in the db.sqlite3 file. 
